@@ -9,6 +9,8 @@ name: Deploy to GitHub Pages
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout
