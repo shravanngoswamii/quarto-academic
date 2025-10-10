@@ -1,0 +1,198 @@
+[
+  {
+    "objectID": "publications/2018_001_turing_flexible_inference/index.html",
+    "href": "publications/2018_001_turing_flexible_inference/index.html",
+    "title": "Turing: A Language for Flexible Probabilistic Inference",
+    "section": "",
+    "text": "Probabilistic programming promises to simplify and democratize probabilistic machine learning, but successful probabilistic programming systems require flexible, generic and efficient inference engines. In this work, we present a system called Turing for building MCMC algorithms for probabilistic programming inference.\nTuring has a very simple syntax and makes full use of the numerical capabilities in the Julia programming language, including all implemented probability distributions, and automatic differentiation. Turing supports a wide range of popular Monte Carlo algorithms, including Hamiltonian Monte Carlo (HMC), HMC with No-U-Turns (NUTS), Gibbs sampling, sequential Monte Carlo (SMC), and several particle MCMC (PMCMC) samplers.\nMost importantly, Turing inference is composable: it combines MCMC operations on subsets of variables, for example using a combination of an HMC engine and a particle Gibbs (PG) engine. We explore several combinations of inference methods with the aim of finding approaches that are both efficient and universal, i.e. applicable to arbitrary probabilistic models. NUTS—a popular variant of HMC that adapts Hamiltonian simulation path length automatically, although quite powerful for exploring differentiable target distributions, is however not universal. We identify some failure modes for the NUTS engine, and demonstrate that composition of PG (for discrete variables) and NUTS (for continuous variables) can be useful when the NUTS engine is either not applicable, or simply does not work well.\nOur aim is to present Turing and its composable inference engines to the world and encourage other researchers to build on this system to help advance the field of probabilistic machine learning."
+  },
+  {
+    "objectID": "publications/2018_001_turing_flexible_inference/index.html#abstract",
+    "href": "publications/2018_001_turing_flexible_inference/index.html#abstract",
+    "title": "Turing: A Language for Flexible Probabilistic Inference",
+    "section": "",
+    "text": "Probabilistic programming promises to simplify and democratize probabilistic machine learning, but successful probabilistic programming systems require flexible, generic and efficient inference engines. In this work, we present a system called Turing for building MCMC algorithms for probabilistic programming inference.\nTuring has a very simple syntax and makes full use of the numerical capabilities in the Julia programming language, including all implemented probability distributions, and automatic differentiation. Turing supports a wide range of popular Monte Carlo algorithms, including Hamiltonian Monte Carlo (HMC), HMC with No-U-Turns (NUTS), Gibbs sampling, sequential Monte Carlo (SMC), and several particle MCMC (PMCMC) samplers.\nMost importantly, Turing inference is composable: it combines MCMC operations on subsets of variables, for example using a combination of an HMC engine and a particle Gibbs (PG) engine. We explore several combinations of inference methods with the aim of finding approaches that are both efficient and universal, i.e. applicable to arbitrary probabilistic models. NUTS—a popular variant of HMC that adapts Hamiltonian simulation path length automatically, although quite powerful for exploring differentiable target distributions, is however not universal. We identify some failure modes for the NUTS engine, and demonstrate that composition of PG (for discrete variables) and NUTS (for continuous variables) can be useful when the NUTS engine is either not applicable, or simply does not work well.\nOur aim is to present Turing and its composable inference engines to the world and encourage other researchers to build on this system to help advance the field of probabilistic machine learning."
+  },
+  {
+    "objectID": "publications/2018_001_turing_flexible_inference/index.html#citation",
+    "href": "publications/2018_001_turing_flexible_inference/index.html#citation",
+    "title": "Turing: A Language for Flexible Probabilistic Inference",
+    "section": "Citation",
+    "text": "Citation\n@InProceedings{pmlr-v84-ge18b,\n  title = {Turing: A Language for Flexible Probabilistic Inference},\n  author = {Ge, Hong and Xu, Kai and Ghahramani, Zoubin},\n  booktitle = {Proceedings of the Twenty-First International Conference on Artificial Intelligence and Statistics},\n  pages = {1682--1690},\n  year = {2018},\n  editor = {Storkey, Amos and Perez-Cruz, Fernando},\n  volume = {84},\n  series = {Proceedings of Machine Learning Research},\n  month = {09--11 Apr},\n  publisher = {PMLR},\n  pdf = {http://proceedings.mlr.press/v84/ge18b/ge18b.pdf},\n  url = {https://proceedings.mlr.press/v84/ge18b.html},\n  abstract = {Probabilistic programming promises to simplify and democratize probabilistic machine learning, but successful probabilistic programming systems require flexible, generic and efficient inference engines. In this work, we present a system called Turing for building MCMC algorithms for probabilistic programming inference. Turing has a very simple syntax and makes full use of the numerical capabilities in the Julia programming language, including all implemented probability distributions, and automatic differentiation. Turing supports a wide range of popular Monte Carlo algorithms, including Hamiltonian Monte Carlo (HMC), HMC with No-U-Turns (NUTS), Gibbs sampling, sequential Monte Carlo (SMC), and several particle MCMC (PMCMC) samplers. Most importantly, Turing inference is composable: it combines MCMC operations on subsets of variables, for example using a combination of an HMC engine and a particle Gibbs (PG) engine. We explore several combinations of inference methods with the aim of finding approaches that are both efficient and universal, i.e. applicable to arbitrary probabilistic models. NUTS—a popular variant of HMC that adapts Hamiltonian simulation path length automatically, although quite powerful for exploring differentiable target distributions, is however not universal. We identify some failure modes for the NUTS engine, and demonstrate that composition of PG (for discrete variables) and NUTS (for continuous variables) can be useful when the NUTS engine is either not applicable, or simply does not work well. Our aim is to present Turing and its composable inference engines to the world and encourage other researchers to build on this system to help advance the field of probabilistic machine learning.}\n}"
+  },
+  {
+    "objectID": "publications/index.html",
+    "href": "publications/index.html",
+    "title": "Publications",
+    "section": "",
+    "text": "Turing.jl: a general-purpose probabilistic programming language\n            \n                \n            \n                Tor Erlend Fjelde, Kai Xu, David Widmann, Mohamed Tarek, Cameron Pfiffer, Martin Trapp, Seth D. Axen, Xianda Sun, Markus Hauru, Penelope Yong, Will Tebbutt, Zoubin Ghahramani, Hong Ge \n            \n                \n            \n                \n                ACM Transactions on Probabilistic Machine Learning, Just Accepted (2025)\n                \n            \n        \n        \n            \n            \n                2 \n            \n            \n            \n            \n            \n                \n                    journal URL \n                \n            \n            \n\n            \n        \n    \n    \n    \n    \n    \n        \n            \n        \n        \n            \n                Turing: A Language for Flexible Probabilistic Inference\n            \n                \n            \n                Hong Ge, Kai Xu, Zoubin Ghahramani \n            \n                \n            \n                \n                Proceedings of Machine Learning Research, 84, 1682-1690 (2018)\n                \n            \n        \n        \n            \n            \n                1 \n            \n            \n            \n            \n            \n                \n                    journal URL \n                \n            \n            \n\n            \n        \n    \n    \n    \n\nNo matching items\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "people/shravan-goswami/index.html",
+    "href": "people/shravan-goswami/index.html",
+    "title": "Shravan Goswami",
+    "section": "",
+    "text": "Shravan Goswami\nRemote Research Assistant at Machine Learning Group, University of Cambridge\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEmail: shravanngoswamii [at] gmail [dot] com\n\n\n\n\nFor More Details click here\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n    \n\nNo matching items\n Back to top"
+  },
+  {
+    "objectID": "people/hong-ge/index.html",
+    "href": "people/hong-ge/index.html",
+    "title": "Hong Ge",
+    "section": "",
+    "text": "Senior Research Fellow at the University of Cambridge\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEmail:\nFor More Details click here"
+  },
+  {
+    "objectID": "people/hong-ge/index.html#hongs-publications",
+    "href": "people/hong-ge/index.html#hongs-publications",
+    "title": "Hong Ge",
+    "section": "Hong’s Publications",
+    "text": "Hong’s Publications\n\n\n    \n      \n      \n    \n\n\n    \n    \n    \n        \n            \n        \n        \n            \n                Turing.jl: a general-purpose probabilistic programming language\n            \n                \n            \n                Tor Erlend Fjelde, Kai Xu, David Widmann, Mohamed Tarek, Cameron Pfiffer, Martin Trapp, Seth D. Axen, Xianda Sun, Markus Hauru, Penelope Yong, Will Tebbutt, Zoubin Ghahramani, Hong Ge \n            \n                \n            \n                \n                ACM Transactions on Probabilistic Machine Learning, Just Accepted (2025)\n                \n            \n        \n        \n            \n            \n                \n                    journal URL \n                \n            \n            \n  \n            \n        \n    \n    \n    \n    \n    \n        \n            \n        \n        \n            \n                Turing: A Language for Flexible Probabilistic Inference\n            \n                \n            \n                Hong Ge, Kai Xu, Zoubin Ghahramani \n            \n                \n            \n                \n                Proceedings of Machine Learning Research, 84, 1682-1690 (2018)\n                \n            \n        \n        \n            \n            \n                \n                    journal URL \n                \n            \n            \n  \n            \n        \n    \n    \n    \n\nNo matching items"
+  },
+  {
+    "objectID": "news/yet-another-sample/index.html",
+    "href": "news/yet-another-sample/index.html",
+    "title": "Yet Another Sample",
+    "section": "",
+    "text": "Nothing’s here😅\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "news/first-news/index.html",
+    "href": "news/first-news/index.html",
+    "title": "First News",
+    "section": "",
+    "text": "You can also use this news section as a blog.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "news/markdown-example/index.html",
+    "href": "news/markdown-example/index.html",
+    "title": "Markdown Template",
+    "section": "",
+    "text": "This is bold text\nThis is bold text\nThis is italic text\nThis is italic text\nStrikethrough\n\n\n\n\nBlockquotes can also be nested… &gt; …by using additional greater-than signs right next to each other… &gt; &gt; …or with spaces between arrows.\n\n\n\n\nUnordered\n\nCreate a list by starting a line with +, -, or *\nSub-lists are made by indenting 2 spaces:\n\nMarker character change forces new list start:\n\nAc tristique libero volutpat at\nFacilisis in pretium nisl aliquet\nNulla volutpat aliquam velit\n\n\nVery easy!\n\nOrdered\n\nLorem ipsum dolor sit amet\nConsectetur adipiscing elit\nInteger molestie lorem at massa\nYou can use sequential numbers…\n…or keep all the numbers as 1.\n\nStart numbering with offset:\n\nfoo\nbar\n\n\n\n\nInline code\nIndented code\n// Some comments\nline 1 of code\nline 2 of code\nline 3 of code\nBlock code “fences”\nSample text here...\nSyntax highlighting\nvar foo = function (bar) {\n  return bar++;\n};\n\nconsole.log(foo(5));\n\n\n\n\n\n\n\n\n\n\nOption\nDescription\n\n\n\n\ndata\npath to data files to supply the data that will be passed into templates.\n\n\nengine\nengine to be used for processing templates. Handlebars is the default.\n\n\next\nextension to be used for dest files.\n\n\n\nRight aligned columns\n\n\n\n\n\n\n\nOption\nDescription\n\n\n\n\ndata\npath to data files to supply the data that will be passed into templates.\n\n\nengine\nengine to be used for processing templates. Handlebars is the default.\n\n\next\nextension to be used for dest files.\n\n\n\n\n\n\nlink text\n\n\n\n \n\n\n\n19th\nH2O\n\n\n\n\nFootnote 1 link1.\nFootnote 2 link2.\nInline footnote3 definition.\nDuplicated footnote reference4.\n\n\n\n\nQuarto Docs"
+  },
+  {
+    "objectID": "news/markdown-example/index.html#emphasis",
+    "href": "news/markdown-example/index.html#emphasis",
+    "title": "Markdown Template",
+    "section": "",
+    "text": "This is bold text\nThis is bold text\nThis is italic text\nThis is italic text\nStrikethrough"
+  },
+  {
+    "objectID": "news/markdown-example/index.html#blockquotes",
+    "href": "news/markdown-example/index.html#blockquotes",
+    "title": "Markdown Template",
+    "section": "",
+    "text": "Blockquotes can also be nested… &gt; …by using additional greater-than signs right next to each other… &gt; &gt; …or with spaces between arrows."
+  },
+  {
+    "objectID": "news/markdown-example/index.html#lists",
+    "href": "news/markdown-example/index.html#lists",
+    "title": "Markdown Template",
+    "section": "",
+    "text": "Unordered\n\nCreate a list by starting a line with +, -, or *\nSub-lists are made by indenting 2 spaces:\n\nMarker character change forces new list start:\n\nAc tristique libero volutpat at\nFacilisis in pretium nisl aliquet\nNulla volutpat aliquam velit\n\n\nVery easy!\n\nOrdered\n\nLorem ipsum dolor sit amet\nConsectetur adipiscing elit\nInteger molestie lorem at massa\nYou can use sequential numbers…\n…or keep all the numbers as 1.\n\nStart numbering with offset:\n\nfoo\nbar"
+  },
+  {
+    "objectID": "news/markdown-example/index.html#code",
+    "href": "news/markdown-example/index.html#code",
+    "title": "Markdown Template",
+    "section": "",
+    "text": "Inline code\nIndented code\n// Some comments\nline 1 of code\nline 2 of code\nline 3 of code\nBlock code “fences”\nSample text here...\nSyntax highlighting\nvar foo = function (bar) {\n  return bar++;\n};\n\nconsole.log(foo(5));"
+  },
+  {
+    "objectID": "news/markdown-example/index.html#tables",
+    "href": "news/markdown-example/index.html#tables",
+    "title": "Markdown Template",
+    "section": "",
+    "text": "Option\nDescription\n\n\n\n\ndata\npath to data files to supply the data that will be passed into templates.\n\n\nengine\nengine to be used for processing templates. Handlebars is the default.\n\n\next\nextension to be used for dest files.\n\n\n\nRight aligned columns\n\n\n\n\n\n\n\nOption\nDescription\n\n\n\n\ndata\npath to data files to supply the data that will be passed into templates.\n\n\nengine\nengine to be used for processing templates. Handlebars is the default.\n\n\next\nextension to be used for dest files."
+  },
+  {
+    "objectID": "news/markdown-example/index.html#links",
+    "href": "news/markdown-example/index.html#links",
+    "title": "Markdown Template",
+    "section": "",
+    "text": "link text"
+  },
+  {
+    "objectID": "news/markdown-example/index.html#images",
+    "href": "news/markdown-example/index.html#images",
+    "title": "Markdown Template",
+    "section": "",
+    "text": "19th\nH2O\n\n\n\n\nFootnote 1 link1.\nFootnote 2 link2.\nInline footnote3 definition.\nDuplicated footnote reference4."
+  },
+  {
+    "objectID": "news/markdown-example/index.html#see-quarto-for-usage-example",
+    "href": "news/markdown-example/index.html#see-quarto-for-usage-example",
+    "title": "Markdown Template",
+    "section": "",
+    "text": "Quarto Docs"
+  },
+  {
+    "objectID": "news/markdown-example/index.html#footnotes",
+    "href": "news/markdown-example/index.html#footnotes",
+    "title": "Markdown Template",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nFootnote can have markup\nand multiple paragraphs.↩︎\nFootnote text.↩︎\nText of inline footnote↩︎\nFootnote text.↩︎"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Latest News",
+    "section": "",
+    "text": "Latest News\n\n\n\n\n\n\n\n\n\n\nSomething’s here.\n\n\n\n\n\n\n\n\nMay 7, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nMarkdown Template\n\n\n\n\n\n\n\n\nSep 19, 2019\n\n\n\n\n\n\n\n\n\n\n\n\nYet Another Sample\n\n\n\n\n\n\n\n\nSep 19, 2019\n\n\n\n\n\n\n\n\n\n\n\n\nFirst News\n\n\n\n\n\n\n\n\nMay 23, 2018\n\n\n\n\n\nNo matching items\n\n\nSee all&gt;\n\n\n\n\nFirst Section\n\nInspired from MLG, Cambridge Site\nExplore MLG Site, It’s Good.\n\n\nIt’s me who created it\nFeel free to explore my site or maybe hire me😅, explore here.\n\n\n\n\nCool Funny Links\n\nXKCD - A webcomic of romance, sarcasm, math, and language\n\n\nThe Babylon Bee - Fake news you can trust\n\n\nThe Spoof - Satire and parody news\n\n\nPhD Comics - PHD TV - The Comics\n\n\nThe Oatmeal - Comics, quizzes, and stories\n\n\nWait But Why - Answers to questions you never thought to ask\n\n\nKurzgesagt - In a Nutshell videos\n\n\n\n\nOther Funny Stuff\n\nSatire\nThe Babylon Bee | The Spoof | The Daily Mash\n\n\nGeek Humor\nXKCD | PhD Comics | The Oatmeal\n\n\nIntellectual Fun\nVsauce | Numberphile | Smarter Every Day\n\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "news/index.html",
+    "href": "news/index.html",
+    "title": "Latest News",
+    "section": "",
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nSomething’s here.\n\n\n\n\n\n\n\n\nMay 7, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nMarkdown Template\n\n\n\n\n\n\n\n\nSep 19, 2019\n\n\n\n\n\n\n\n\n\n\n\n\nYet Another Sample\n\n\n\n\n\n\n\n\nSep 19, 2019\n\n\n\n\n\n\n\n\n\n\n\n\nFirst News\n\n\n\n\n\n\n\n\nMay 23, 2018\n\n\n\n\n\nNo matching items\n Back to top"
+  },
+  {
+    "objectID": "news/something-is-here/index.html",
+    "href": "news/something-is-here/index.html",
+    "title": "Something’s here.",
+    "section": "",
+    "text": "Ohh it’s just my resume.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Us",
+    "section": "",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\n\n\n\n\n\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "people/index.html",
+    "href": "people/index.html",
+    "title": "Academic Website Template",
+    "section": "",
+    "text": "Mentor\n\n\n\n\n\nHong Ge\n\n\n\n\n\n\nStudent\n\n\n\n\n\nShravan Goswami\n\n\n\n\n\n\nNo matching items\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "admissions.html",
+    "href": "admissions.html",
+    "title": "Admission/Notice/Banner/etc…",
+    "section": "",
+    "text": "This is dummy content for the admissions page. Application deadline: 11:59pm, 2rd December 2025, UK time\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "publications/2025_002_turing_general_purpose/index.html",
+    "href": "publications/2025_002_turing_general_purpose/index.html",
+    "title": "Turing.jl: a general-purpose probabilistic programming language",
+    "section": "",
+    "text": "Probabilistic programming languages (PPLs) are becoming increasingly important in many scientific disciplines, such as economics, epidemiology, and biology, to extract meaning from sources of data while accounting for one’s uncertainty. The key idea of probabilistic programming is to decouple inference and model specification, thus allowing the practitioner to approach their task at hand using Bayesian inference, without requiring extensive knowledge in programming or computational statistics. At the same time, the complexity of problem settings in which PPLs are employed is steadily increasing, both in terms of project size and model complexity, calling for more flexible and efficient systems.\nIn this work, we describe Turing.jl, a general-purpose PPL, which is designed to be flexible, efficient, and easy to use. Turing.jl is built on top of the Julia programming language, which is known for its high performance and ease-of-use. We describe the design of Turing.jl, contextualizing it within different types of users and use cases, its key features, and how it can be used to solve a wide range of problems. We also provide a brief overview of the ecosystem around Turing.jl, including the different libraries and tools that can be used in conjunction with it. Finally, we provide a few examples of how Turing.jl can be used in practice."
+  },
+  {
+    "objectID": "publications/2025_002_turing_general_purpose/index.html#abstract",
+    "href": "publications/2025_002_turing_general_purpose/index.html#abstract",
+    "title": "Turing.jl: a general-purpose probabilistic programming language",
+    "section": "",
+    "text": "Probabilistic programming languages (PPLs) are becoming increasingly important in many scientific disciplines, such as economics, epidemiology, and biology, to extract meaning from sources of data while accounting for one’s uncertainty. The key idea of probabilistic programming is to decouple inference and model specification, thus allowing the practitioner to approach their task at hand using Bayesian inference, without requiring extensive knowledge in programming or computational statistics. At the same time, the complexity of problem settings in which PPLs are employed is steadily increasing, both in terms of project size and model complexity, calling for more flexible and efficient systems.\nIn this work, we describe Turing.jl, a general-purpose PPL, which is designed to be flexible, efficient, and easy to use. Turing.jl is built on top of the Julia programming language, which is known for its high performance and ease-of-use. We describe the design of Turing.jl, contextualizing it within different types of users and use cases, its key features, and how it can be used to solve a wide range of problems. We also provide a brief overview of the ecosystem around Turing.jl, including the different libraries and tools that can be used in conjunction with it. Finally, we provide a few examples of how Turing.jl can be used in practice."
+  },
+  {
+    "objectID": "publications/2025_002_turing_general_purpose/index.html#citation",
+    "href": "publications/2025_002_turing_general_purpose/index.html#citation",
+    "title": "Turing.jl: a general-purpose probabilistic programming language",
+    "section": "Citation",
+    "text": "Citation\n@article{10.1145/3711897,\n  author = {Fjelde, Tor Erlend and Xu, Kai and Widmann, David and Tarek, Mohamed and Pfiffer, Cameron and Trapp, Martin and Axen, Seth D. and Sun, Xianda and Hauru, Markus and Yong, Penelope and Tebbutt, Will and Ghahramani, Zoubin and Ge, Hong},\n  title = {Turing.jl: a general-purpose probabilistic programming language},\n  year = {2025},\n  publisher = {Association for Computing Machinery},\n  address = {New York, NY, USA},\n  url = {https://doi.org/10.1145/3711897},\n  doi = {10.1145/3711897},\n  abstract = {Probabilistic programming languages (PPLs) are becoming increasingly important in many scientific disciplines, such as economics, epidemiology, and biology, to extract meaning from sources of data while accounting for one's uncertainty. The key idea of probabilistic programming is to decouple inference and model specification, thus allowing the practitioner to approach their task at hand using Bayesian inference, without requiring extensive knowledge in programming or computational statistics. At the same time, the complexity of problem settings in which PPLs are employed is steadily increasing, both in terms of project size and model complexity, calling for more flexible and efficient systems. In this work, we describe Turing.jl, a general-purpose PPL, which is designed to be flexible, efficient, and easy to use. Turing.jl is built on top of the Julia programming language, which is known for its high performance and ease-of-use. We describe the design of Turing.jl, contextualizing it within different types of users and use cases, its key features, and how it can be used to solve a wide range of problems. We also provide a brief overview of the ecosystem around Turing.jl, including the different libraries and tools that can be used in conjunction with it. Finally, we provide a few examples of how Turing.jl can be used in practice.},\n  note = {Just Accepted},\n  journal = {ACM Trans. Probab. Mach. Learn.},\n  month = feb,\n  keywords = {Probabilistic Programming, Probabilistic Programming Languages, Probabilistic Inference, Bayesian Inference, Markov Chain Monte Carlo, Variational Inference, Sequential Monte Carlo, Uncertainty Quantification, Modeling Methodologies, Latent Variable Models, Maximum a Posteriori Modeling, Software Libraries and Repositories, Bayesian Computation, Variational Methods, Sequential Monte Carlo Methods}\n}"
+  }
+]

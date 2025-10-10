@@ -1,0 +1,45 @@
+[
+  {
+    "listing": "/publications/index.html",
+    "items": [
+      "/publications/2025_002_turing_general_purpose/index.html",
+      "/publications/2018_001_turing_flexible_inference/index.html"
+    ]
+  },
+  {
+    "listing": "/people/shravan-goswami/index.html",
+    "items": []
+  },
+  {
+    "listing": "/people/hong-ge/index.html",
+    "items": [
+      "/publications/2025_002_turing_general_purpose/index.html",
+      "/publications/2018_001_turing_flexible_inference/index.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/news/something-is-here/index.html",
+      "/news/markdown-example/index.html",
+      "/news/yet-another-sample/index.html",
+      "/news/first-news/index.html"
+    ]
+  },
+  {
+    "listing": "/news/index.html",
+    "items": [
+      "/news/something-is-here/index.html",
+      "/news/markdown-example/index.html",
+      "/news/yet-another-sample/index.html",
+      "/news/first-news/index.html"
+    ]
+  },
+  {
+    "listing": "/people/index.html",
+    "items": [
+      "/people/hong-ge/index.html",
+      "/people/shravan-goswami/index.html"
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+/* -- publications --*/
+
+.listing-pub-title {
+  font-size: 18px;
+  font-weight: 700; 
+}
+
+.listing-pub-author {
+  color: #757883;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.listing-pub-number {
+  font-weight: 700; 
+  font-size: 15px;
+}
+
+.listing-pub-journal {
+  color: #757883;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.listing-pub-url {
+  font-size: 13px;
+}
