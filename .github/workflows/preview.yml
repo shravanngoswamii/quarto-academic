@@ -8,6 +8,9 @@ jobs:
   build-and-preview:
     if: github.event.action == 'opened' || github.event.action == 'synchronize'
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -36,6 +39,8 @@ jobs:
     needs: build-and-preview
     if: needs.build-and-preview.result == 'success'
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
       - name: Comment Preview URL
         uses: thollander/actions-comment-pull-request@v2
@@ -50,6 +55,8 @@ jobs:
   delete-preview-directory:
     if: github.event.action == 'closed' || github.event.pull_request.merged == true
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout gh-pages branch
         uses: actions/checkout@v4
