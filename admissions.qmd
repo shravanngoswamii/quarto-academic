@@ -1,0 +1,6 @@
+﻿---
+title: "Admission/Notice/Banner/etc..."
+application_deadline:  11:59pm, 2rd December 2025, UK time
+---
+
+This is dummy content for the admissions page. Application deadline: {{< meta application_deadline >}}

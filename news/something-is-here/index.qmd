@@ -1,0 +1,7 @@
+
+---
+title: Something's here.
+date: 07 May 2024
+---
+
+Ohh it's just my [resume](https://shravanngoswamii.github.io/resume.pdf).

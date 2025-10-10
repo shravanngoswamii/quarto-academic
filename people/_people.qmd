@@ -1,0 +1,80 @@
+::: {.author-header}
+
+::: {.author-image}
+```{=html}
+<img src="{{< meta image >}}" onerror="this.src='../../assets/icons/person.webp';" class="img-fluid" alt="">
+```
+:::
+
+::: {.author-name-links}
+# {{< meta pagetitle >}}
+*{{< meta tagline >}}*
+```{=html}
+<div class="author-links">
+<ul>
+<!-- Team Member Links -->
+<li><a class="bi-globe" href="{{< meta links.website >}}" target="_blank"></a></li>
+<li><a class="bi-github" href="{{< meta links.github >}}" target="_blank"></a></li>
+<li><a class="bi-twitter" href="{{< meta links.twitter >}}" target="_blank"></a></li>
+<li><a class="bi-linkedin" href="{{< meta links.linkedin >}}" target="_blank"></a></li>
+<li><a class="bi-mastodon" href="{{< meta links.mastodon >}}" target="_blank"></a></li>
+<li><a class="bi-mortarboard-fill" href="{{< meta links.scholar >}}" target="_blank"></a></li>
+<li><a class="bi-youtube" href="{{< meta links.youtube >}}" target="_blank"></a></li>
+<li><a class="bi-medium" href="{{< meta links.medium >}}" target="_blank"></a></li>
+<li><a class="bi-file-earmark-text" href="{{< meta links.resume >}}" target="_blank"></a></li>
+<!-- Add any Additional Links if required here -->
+</ul>
+<p class="email">Email: {{< meta email >}}</p>
+</div>
+```
+:::
+
+:::
+
+
+
+```{=html}
+<script>
+function removeEmptyListItems() {
+  const listItems = document.querySelectorAll('.author-links ul li');
+
+  listItems.forEach(item => {
+    const anchor = item.querySelector('a');
+    const currentUrl = window.location.href;
+
+    if (!anchor || !anchor.getAttribute('href') || anchor.getAttribute('href') === currentUrl) {
+      item.remove();
+    }
+  });
+}
+
+function removeMetaElements() {
+  const allElements = document.querySelectorAll('*');
+
+  Array.from(allElements).reverse().forEach(element => {
+    if (element.textContent.trim().startsWith('?meta:')) {
+      element.remove();
+    } else if (element.hasAttribute('href') && element.getAttribute('href').includes('?meta:')) {
+      element.remove();
+    }
+  });
+}
+
+function removeEmptyEmail() {
+  const emailParagraph = document.querySelector('.author-links .email');
+  if (emailParagraph) {
+    const emailText = emailParagraph.textContent.trim();
+    if (emailText === 'Email:' || emailText.includes('?meta:')) {
+      emailParagraph.remove();
+    }
+  }
+}
+
+// Call the functions to perform the removal once the document is fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+  removeMetaElements();
+  removeEmptyListItems();
+  removeEmptyEmail(); // New function call for email
+});
+</script>
+```

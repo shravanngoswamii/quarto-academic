@@ -1,0 +1,12 @@
+---
+pagetitle: MLG News
+title: Latest News
+listing:
+  contents: ../news/*/index.qmd
+  sort: "date desc"
+  sort-ui: true
+  filter-ui: true
+  type: default
+image: false
+#   max-items: 10
+---

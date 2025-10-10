@@ -1,0 +1,45 @@
+---
+title: "Turing: A Language for Flexible Probabilistic Inference"
+author: ["Hong Ge", "Kai Xu", "Zoubin Ghahramani"]
+publication: "Proceedings of Machine Learning Research, **84**, 1682-1690 (2018)"
+categories: 
+  - "probabilistic_programming"
+  - "bayesian_inference"
+  - "monte_carlo"
+url_source: "https://proceedings.mlr.press/v84/ge18b.html"
+journ: "Proceedings of Machine Learning Research"
+issue: 84
+page: "1682-1690"
+year: 2018
+pub_number: 1
+---
+
+## Abstract
+
+Probabilistic programming promises to simplify and democratize probabilistic machine learning, but successful probabilistic programming systems require flexible, generic and efficient inference engines. In this work, we present a system called Turing for building MCMC algorithms for probabilistic programming inference. 
+
+Turing has a very simple syntax and makes full use of the numerical capabilities in the Julia programming language, including all implemented probability distributions, and automatic differentiation. Turing supports a wide range of popular Monte Carlo algorithms, including Hamiltonian Monte Carlo (HMC), HMC with No-U-Turns (NUTS), Gibbs sampling, sequential Monte Carlo (SMC), and several particle MCMC (PMCMC) samplers. 
+
+Most importantly, Turing inference is composable: it combines MCMC operations on subsets of variables, for example using a combination of an HMC engine and a particle Gibbs (PG) engine. We explore several combinations of inference methods with the aim of finding approaches that are both efficient and universal, i.e. applicable to arbitrary probabilistic models. NUTS—a popular variant of HMC that adapts Hamiltonian simulation path length automatically, although quite powerful for exploring differentiable target distributions, is however not universal. We identify some failure modes for the NUTS engine, and demonstrate that composition of PG (for discrete variables) and NUTS (for continuous variables) can be useful when the NUTS engine is either not applicable, or simply does not work well. 
+
+Our aim is to present Turing and its composable inference engines to the world and encourage other researchers to build on this system to help advance the field of probabilistic machine learning.
+
+## Citation
+
+```bibtex
+@InProceedings{pmlr-v84-ge18b,
+  title = {Turing: A Language for Flexible Probabilistic Inference},
+  author = {Ge, Hong and Xu, Kai and Ghahramani, Zoubin},
+  booktitle = {Proceedings of the Twenty-First International Conference on Artificial Intelligence and Statistics},
+  pages = {1682--1690},
+  year = {2018},
+  editor = {Storkey, Amos and Perez-Cruz, Fernando},
+  volume = {84},
+  series = {Proceedings of Machine Learning Research},
+  month = {09--11 Apr},
+  publisher = {PMLR},
+  pdf = {http://proceedings.mlr.press/v84/ge18b/ge18b.pdf},
+  url = {https://proceedings.mlr.press/v84/ge18b.html},
+  abstract = {Probabilistic programming promises to simplify and democratize probabilistic machine learning, but successful probabilistic programming systems require flexible, generic and efficient inference engines. In this work, we present a system called Turing for building MCMC algorithms for probabilistic programming inference. Turing has a very simple syntax and makes full use of the numerical capabilities in the Julia programming language, including all implemented probability distributions, and automatic differentiation. Turing supports a wide range of popular Monte Carlo algorithms, including Hamiltonian Monte Carlo (HMC), HMC with No-U-Turns (NUTS), Gibbs sampling, sequential Monte Carlo (SMC), and several particle MCMC (PMCMC) samplers. Most importantly, Turing inference is composable: it combines MCMC operations on subsets of variables, for example using a combination of an HMC engine and a particle Gibbs (PG) engine. We explore several combinations of inference methods with the aim of finding approaches that are both efficient and universal, i.e. applicable to arbitrary probabilistic models. NUTS—a popular variant of HMC that adapts Hamiltonian simulation path length automatically, although quite powerful for exploring differentiable target distributions, is however not universal. We identify some failure modes for the NUTS engine, and demonstrate that composition of PG (for discrete variables) and NUTS (for continuous variables) can be useful when the NUTS engine is either not applicable, or simply does not work well. Our aim is to present Turing and its composable inference engines to the world and encourage other researchers to build on this system to help advance the field of probabilistic machine learning.}
+}
+```

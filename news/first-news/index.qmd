@@ -1,0 +1,6 @@
+---
+title: First News
+date: 23 May 2018
+---
+
+You can also use this news section as a blog.

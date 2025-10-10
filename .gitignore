@@ -1,0 +1,12 @@
+/.quarto/
+_site
+index.html
+publications/assets/data/mlg.yaml
+publications/assets/data/by-year.yaml
+publications/assets/data/by-topics.yaml
+publications/assets/data/by-author.yaml
+index_files
+site_libs/
+__pycache__
+*.html
+*.json

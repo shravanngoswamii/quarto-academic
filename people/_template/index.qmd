@@ -1,0 +1,59 @@
+---
+# Define name once and reuse it everywhere
+name: &NAME Full Name
+
+pagetitle: *NAME
+image: avatar.jpg
+tagline: Position at Organization
+group: mentor  # or: phd, postdoc, alumni, etc.
+email: email@example.com
+year_arrived: 2020
+year_left:
+still_around: true
+slug: firstname-lastname
+links:
+  website: https://example.com
+  github: https://github.com/username
+  twitter: https://twitter.com/username
+  linkedin: https://linkedin.com/in/username
+  mastodon:
+  scholar: https://scholar.google.com/citations?user=ID
+  youtube:
+  medium:
+  resume:
+
+listing:
+  id: pubs
+  template: ../../_ejs/publications-people.ejs
+  contents:
+    - "../../publications/**/*.qmd"
+    - "!../../publications/_template/"
+  sort: "pub_number desc"
+  filter-ui: true
+  include:
+    author: *NAME
+  fields: [publication, title, categories, image, date, author]
+---
+
+{{< include ../_people.qmd >}}
+
+## About
+
+Add biographical information here.
+
+## Education
+
+- Ph.D. in Field | University, Year
+- M.S. in Field | University, Year
+- B.S. in Field | University, Year
+
+## Research Interests
+
+- Research area 1
+- Research area 2
+- Research area 3
+
+## Person's Publications
+
+:::{#pubs}
+:::

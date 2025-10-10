@@ -1,0 +1,71 @@
+---
+pagetitle: Academic Group Site Template
+listing:
+  id: news-listing
+  contents: news/*/index.qmd
+  sort: "date desc"
+  type: default
+  max-items: 4
+image: false
+include-before-body: 
+  text: |
+    <style> .thumbnail { max-width: 0; display: none; } .metadata { max-width: 90px; padding-bottom: 0 !important; } div.quarto-post { display: block !important; } .quarto-post { max-height: fit-content; border-bottom: none !important; } </style>
+---
+
+
+# Latest News
+::: {#news-listing}
+:::
+
+::: {.news-see-all}
+[`See all>`](news/)
+:::
+
+
+<br />
+
+
+# First Section
+
+#### [Inspired from MLG, Cambridge Site](https://mlg.eng.cam.ac.uk/)
+Explore MLG Site, [It's Good](http://mlg.eng.cam.ac.uk/).
+
+#### [It's me who created it](https://shravanngoswamii.github.io)
+Feel free to explore my site or maybe hire me😅, [explore here](https://shravanngoswamii.github.io).
+
+
+<br />
+
+
+# Cool Funny Links
+
+#### [XKCD](https://xkcd.com/) - A webcomic of romance, sarcasm, math, and language
+
+#### [The Babylon Bee](https://babylonbee.com/) - Fake news you can trust
+
+#### [The Spoof](https://www.thespoof.com/) - Satire and parody news
+
+#### [PhD Comics](https://phdcomics.com/) - PHD TV - The Comics
+
+#### [The Oatmeal](https://theoatmeal.com/) - Comics, quizzes, and stories
+
+#### [Wait But Why](https://waitbutwhy.com/) - Answers to questions you never thought to ask
+
+#### [Kurzgesagt](https://www.youtube.com/user/Kurzgesagt) - In a Nutshell videos
+
+
+<br />
+
+# Other Funny Stuff
+
+#### Satire
+
+[The Babylon Bee](https://babylonbee.com/) | [The Spoof](https://www.thespoof.com/) | [The Daily Mash](https://www.thedailymash.co.uk/)
+
+#### Geek Humor
+
+[XKCD](https://xkcd.com/) | [PhD Comics](https://phdcomics.com/) | [The Oatmeal](https://theoatmeal.com/)
+
+#### Intellectual Fun
+
+[Vsauce](https://www.youtube.com/user/Vsauce) | [Numberphile](https://www.youtube.com/user/numberphile) | [Smarter Every Day](https://www.youtube.com/user/destinws2)

@@ -1,0 +1,39 @@
+---
+title: "Turing.jl: a general-purpose probabilistic programming language"
+author: ["Tor Erlend Fjelde", "Kai Xu", "David Widmann", "Mohamed Tarek", "Cameron Pfiffer", "Martin Trapp", "Seth D. Axen", "Xianda Sun", "Markus Hauru", "Penelope Yong", "Will Tebbutt", "Zoubin Ghahramani", "Hong Ge"]
+publication: "ACM Transactions on Probabilistic Machine Learning, Just Accepted (2025)"
+categories: 
+  - "probabilistic_programming"
+  - "bayesian_inference"
+  - "machine_learning"
+url_source: "https://doi.org/10.1145/3711897"
+journ: "ACM Transactions on Probabilistic Machine Learning"
+issue: "Just Accepted"
+year: 2025
+pub_number: 2
+---
+
+## Abstract
+
+Probabilistic programming languages (PPLs) are becoming increasingly important in many scientific disciplines, such as economics, epidemiology, and biology, to extract meaning from sources of data while accounting for one's uncertainty. The key idea of probabilistic programming is to decouple inference and model specification, thus allowing the practitioner to approach their task at hand using Bayesian inference, without requiring extensive knowledge in programming or computational statistics. At the same time, the complexity of problem settings in which PPLs are employed is steadily increasing, both in terms of project size and model complexity, calling for more flexible and efficient systems. 
+
+In this work, we describe Turing.jl, a general-purpose PPL, which is designed to be flexible, efficient, and easy to use. Turing.jl is built on top of the Julia programming language, which is known for its high performance and ease-of-use. We describe the design of Turing.jl, contextualizing it within different types of users and use cases, its key features, and how it can be used to solve a wide range of problems. We also provide a brief overview of the ecosystem around Turing.jl, including the different libraries and tools that can be used in conjunction with it. Finally, we provide a few examples of how Turing.jl can be used in practice.
+
+## Citation
+
+```bibtex
+@article{10.1145/3711897,
+  author = {Fjelde, Tor Erlend and Xu, Kai and Widmann, David and Tarek, Mohamed and Pfiffer, Cameron and Trapp, Martin and Axen, Seth D. and Sun, Xianda and Hauru, Markus and Yong, Penelope and Tebbutt, Will and Ghahramani, Zoubin and Ge, Hong},
+  title = {Turing.jl: a general-purpose probabilistic programming language},
+  year = {2025},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3711897},
+  doi = {10.1145/3711897},
+  abstract = {Probabilistic programming languages (PPLs) are becoming increasingly important in many scientific disciplines, such as economics, epidemiology, and biology, to extract meaning from sources of data while accounting for one's uncertainty. The key idea of probabilistic programming is to decouple inference and model specification, thus allowing the practitioner to approach their task at hand using Bayesian inference, without requiring extensive knowledge in programming or computational statistics. At the same time, the complexity of problem settings in which PPLs are employed is steadily increasing, both in terms of project size and model complexity, calling for more flexible and efficient systems. In this work, we describe Turing.jl, a general-purpose PPL, which is designed to be flexible, efficient, and easy to use. Turing.jl is built on top of the Julia programming language, which is known for its high performance and ease-of-use. We describe the design of Turing.jl, contextualizing it within different types of users and use cases, its key features, and how it can be used to solve a wide range of problems. We also provide a brief overview of the ecosystem around Turing.jl, including the different libraries and tools that can be used in conjunction with it. Finally, we provide a few examples of how Turing.jl can be used in practice.},
+  note = {Just Accepted},
+  journal = {ACM Trans. Probab. Mach. Learn.},
+  month = feb,
+  keywords = {Probabilistic Programming, Probabilistic Programming Languages, Probabilistic Inference, Bayesian Inference, Markov Chain Monte Carlo, Variational Inference, Sequential Monte Carlo, Uncertainty Quantification, Modeling Methodologies, Latent Variable Models, Maximum a Posteriori Modeling, Software Libraries and Repositories, Bayesian Computation, Variational Methods, Sequential Monte Carlo Methods}
+}
+```

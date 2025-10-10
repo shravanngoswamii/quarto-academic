@@ -1,0 +1,69 @@
+project:
+  type: website
+  preview:
+    # Change port if it's busy in your system or just remove this line so that It will automatically use any free port
+    port: 4200
+    browser: true
+
+# These cannot be used as variables. They are reserved for the project configuration.
+website:
+  title: "Academic Website Template"
+  site-url: https://shravanngoswamii.github.io/academic-website-template/
+  site-path: "/"
+  favicon: "assets/logo/favicon.png"
+  search: 
+    location: navbar
+    type: overlay
+  navbar:
+    title: "<span class='title-hide-mobile'>Very Large Title For Your Site</span><span class='title-hide-desktop'>Short Title</span>"
+    logo: "assets/logo/logo.png"
+    # logo-href: https://shravanngoswamii.github.io/academic-website-template/
+    background: "#c6dbef"
+    right:
+      - text: About Us
+        href: about.qmd
+      - text: News
+        href: news/
+      - text: Publications 
+        href: publications/
+      - text: People
+        href: people/
+      - text: Admissions
+        href: admissions.qmd
+      
+  sidebar: false
+  back-to-top-navigation: true
+  page-navigation: true
+
+format:
+  html:
+    theme:
+      light: cosmo
+    sidebar: false
+    css: 
+      - assets/styles/style.css
+    toc: false
+    mainfont: Anaheim, K2D, Arial, Helvetica, sans-serif;
+    # page-layout: full
+    # grid:
+    #   sidebar-width: 900px
+    #   body-width: 2400px
+    #   margin-width: 950px
+    smooth-scroll: true
+    code-overflow: wrap
+    include-in-header: 
+      text: |
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anaheim">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=K2D">
+    include-after-body:
+      text: |
+        <footer id="footer">
+          <style>#footer p{text-align: center !important;}</style>
+          <p><a href="#">Your Academic Site</a>. Follow us on <span class="icon twitter-icon"></span><a href="#">@Username</a> and check out our GitHub <span class="icon github-icon"></span><a href="#">Username</a>.</p>
+          <p>Website created by <a href="https://shravangoswami.com/">Shravan Goswami</a>!</p>
+          <p>Powered by <a href="https://quarto.org/">Quarto</a>. &copy; <a href="#">Your Academic Site</a>.</p>
+        </footer>
+
+site-url: https://shravanngoswamii.github.io/academic-website-template/

@@ -1,0 +1,46 @@
+---
+# Define name once and reuse it
+name: &NAME Hong Ge
+
+pagetitle: *NAME
+image: hong.png
+tagline: Senior Research Fellow at the University of Cambridge
+group: mentor
+email:
+year_arrived:
+year_left:
+still_around: true
+slug: hong-ge
+links:
+  website:
+  github:
+  twitter:
+  linkedin:
+  mastodon:
+  scholar:
+  youtube:
+  medium:
+  resume:
+
+listing:
+  id: pubs
+  template: ../../_ejs/publications-people.ejs
+  contents:
+    - "../../publications/**/*.qmd"
+    - "!../../publications/_template/"
+  sort: "pub_number desc"
+  filter-ui: true
+  include:
+    author: *NAME
+  fields: [publication, title, categories, image, date, author]
+---
+
+{{< include ../_people.qmd >}}
+
+For More Details [click here](http://mlg.eng.cam.ac.uk/hong/)
+
+## Hong's Publications
+
+:::{#pubs}
+:::
+

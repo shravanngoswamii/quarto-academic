@@ -1,0 +1,20 @@
+---
+title: "Publications"
+listing:
+  - id: pubs
+    template: ../_ejs/publications.ejs
+    contents: ../publications/**/*.qmd
+    sort: "pub_number desc"
+    page-size: 30
+    filter-ui: true
+    fields: [image, pub_number, title, publication, author, url_source, url_preprint, journ, issue, page, year]
+page-layout: full
+format:
+  html: 
+    css: ../assets/styles/publications.css
+---
+
+<hr>
+
+:::{#pubs}
+:::

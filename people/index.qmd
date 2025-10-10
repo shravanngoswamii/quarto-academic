@@ -1,0 +1,16 @@
+---
+pagetitle: Group Members
+listing:
+  id: group-members
+  contents: 
+    - ../people/*/index.qmd
+    - "!../people/_template/"
+  template: index.ejs
+resources:
+  - "../assets/icons/person.webp"
+---
+
+::: {#group-members}
+:::
+
+

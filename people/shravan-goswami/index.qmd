@@ -1,0 +1,40 @@
+---
+# Define name once and reuse it
+name: &NAME Shravan Goswami
+
+pagetitle: *NAME
+image: shravan-goswami.jpg
+tagline: Remote Research Assistant at Machine Learning Group, University of Cambridge
+group: Student
+email: shravanngoswamii [at] gmail [dot] com
+year_arrived:
+year_left:
+still_around: true
+slug: shravan-goswami
+links:
+  website: https://shravangoswami.com/
+  github: https://github.com/shravanngoswamii
+  twitter: https://x.com/shravangoswamii
+  linkedin: https://www.linkedin.com/in/shravangoswami/
+  mastodon:
+  scholar:
+  youtube:
+  medium:
+  resume: https://shravangoswami.com/resume
+
+listing:
+  id: pubs
+  template: ../../_ejs/publications-people.ejs
+  contents:
+    - "../../publications/**/*.qmd"
+    - "!../../publications/_template/"
+  sort: "pub_number desc"
+  filter-ui: true
+  include:
+    author: *NAME
+  fields: [publication, title, categories, image, date, author]
+---
+
+{{< include ../_people.qmd >}}
+
+For More Details [click here](https://shravangoswami.com)
