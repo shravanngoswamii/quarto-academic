@@ -4,10 +4,10 @@ listing:
   - id: pubs
     template: ../_ejs/publications.ejs
     contents: ../publications/**/*.qmd
-    sort: "pub_number desc"
+    sort: "year desc"
     page-size: 30
     filter-ui: true
-    fields: [image, pub_number, title, publication, author, url_source, url_preprint, journ, issue, page, year]
+    fields: [image, pub_number, title, publication, author, url_source, url_preprint, journ, issue, page, year, abstract, bibtex]
 page-layout: full
 format:
   html: 
@@ -18,3 +18,58 @@ format:
 
 :::{#pubs}
 :::
+
+```{=html}
+<script>
+function copyBibtex(pubNumber) {
+  const textarea = document.getElementById('bibtex-' + pubNumber);
+  if (!textarea) return;
+  
+  // Create a temporary textarea to copy from
+  const tempTextarea = document.createElement('textarea');
+  tempTextarea.value = textarea.value;
+  tempTextarea.style.position = 'fixed';
+  tempTextarea.style.left = '-9999px';
+  document.body.appendChild(tempTextarea);
+  
+  // Select and copy
+  tempTextarea.select();
+  tempTextarea.setSelectionRange(0, 99999);
+  
+  try {
+    document.execCommand('copy');
+    showCopyToast();
+  } catch (err) {
+    // Fallback for modern browsers
+    navigator.clipboard.writeText(textarea.value).then(() => {
+      showCopyToast();
+    }).catch(err => {
+      console.error('Failed to copy:', err);
+    });
+  }
+  
+  // Remove temporary textarea
+  document.body.removeChild(tempTextarea);
+}
+
+function showCopyToast() {
+  // Remove existing toast if any
+  const existingToast = document.querySelector('.copy-toast');
+  if (existingToast) {
+    existingToast.remove();
+  }
+  
+  // Create and show new toast
+  const toast = document.createElement('div');
+  toast.className = 'copy-toast';
+  toast.textContent = 'BibTeX citation copied to clipboard!';
+  document.body.appendChild(toast);
+  
+  // Remove after animation completes
+  setTimeout(() => {
+    toast.remove();
+  }, 3000);
+}
+</script>
+```
+

@@ -1,27 +1,244 @@
 /* -- publications --*/
 
 .listing-pub-title {
-  font-size: 18px;
-  font-weight: 700; 
+  font-size: 1.25rem;
+  font-weight: 600; 
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+  color: #2c5282;
 }
 
 .listing-pub-author {
-  color: #757883;
-  font-size: 13px;
-  margin-bottom: 6px;
-}
-
-.listing-pub-number {
-  font-weight: 700; 
-  font-size: 15px;
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
 }
 
 .listing-pub-journal {
-  color: #757883;
-  font-size: 15px;
-  margin-bottom: 8px;
+  color: #666;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  font-style: italic;
 }
 
-.listing-pub-url {
-  font-size: 13px;
+
+.pub-date-venue-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+}
+
+.pub-date {
+  font-size: 0.875rem;
+  color: #666;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.pub-venue-badge {
+  display: inline-block;
+  /* padding: 0.35rem 0.85rem; */
+  /* background-color: #2563eb; */
+  /* color: white; */
+  /* border-radius: 4px; */
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.pub-bibtex-button-inline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  margin-top: 0.2rem;
+  background-color: white;
+  color: #2563eb;
+  border: none;
+  /* border-radius: 4px; */
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.pub-bibtex-button-inline:hover {
+  /* background-color: #2563eb; */
+  color: #c6dbef;
+}
+
+.pub-bibtex-button-inline i {
+  font-size: 1.1rem;
+}
+
+/* Links section */
+.pub-links {
+  display: flex;
+  /* gap: 0.5rem; */
+  flex-wrap: wrap;
+  width:max-content;
+}
+
+.pub-link-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  /* padding: 0.4rem 0.9rem; */
+  /* background-color: white; */
+  /* color: #2563eb; */
+  /* border: 1.5px solid #2563eb; */
+  /* border-radius: 4px; */
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pub-link-button:hover {
+  /* background-color: #2563eb; */
+  color: #2563eb;
+  text-decoration: none;
+}
+
+/* Abstract preview and collapsible section */
+.pub-abstract-wrapper {
+  margin-top: 0.75rem;
+}
+
+.pub-abstract-preview {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #555;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pub-details {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.pub-details[open] {
+  margin-top: 0;
+}
+
+.pub-abstract-wrapper:has(.pub-details[open]) .pub-abstract-preview {
+  display: none;
+}
+
+.pub-details[open] .pub-summary {
+  display: none;
+}
+
+.pub-summary {
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: #2563eb;
+  padding: 0;
+  margin: 0;
+  user-select: none;
+  transition: color 0.2s ease;
+  font-style: italic;
+  list-style: none;
+}
+
+.pub-summary::-webkit-details-marker {
+  display: none;
+}
+
+.pub-summary:hover {
+  color: #1e40af;
+  text-decoration: underline;
+}
+
+.pub-show-less {
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: #2563eb;
+  /* margin-top: 0.5rem; */
+  display: inline-block;
+  user-select: none;
+  transition: color 0.2s ease;
+  font-style: italic;
+}
+
+.pub-show-less:hover {
+  color: #1e40af;
+  text-decoration: underline;
+}
+
+.pub-abstract-full {
+  margin-top: 0;
+  padding: 0;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #444;
+  text-align: justify;
+}
+
+/* Hidden textarea for BibTeX */
+.pub-bibtex-hidden {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+}
+
+/* Improve spacing in publication listings */
+.quarto-post.image-right {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.quarto-post.image-right:last-child {
+  border-bottom: none;
+}
+
+/* Toast notification for copy feedback */
+.copy-toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #2563eb;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  font-size: 0.9rem;
+  font-weight: 500;
+  z-index: 1000;
+  animation: slideIn 0.3s ease, slideOut 0.3s ease 2.7s;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(400px);
+    opacity: 0;
+  }
 }

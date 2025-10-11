@@ -32,7 +32,7 @@ listing:
   filter-ui: true
   include:
     author: *NAME
-  fields: [publication, title, categories, image, date, author]
+  fields: [publication, title, categories, image, date, author, url_source, url_preprint, journ, issue, page, year, abstract, bibtex]
 ---
 
 {{< include ../_people.qmd >}}
