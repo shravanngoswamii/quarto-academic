@@ -80,9 +80,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-publication','listing-title','listing-categories','listing-image','listing-date','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      valueNames: ['listing-publication','listing-title','listing-categories','listing-image','listing-date','listing-author','listing-url_source','listing-url_preprint','listing-journ','listing-issue','listing-page','listing-year','listing-abstract','listing-bibtex',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
       
-      searchColumns: ["listing-project","listing-website","listing-format","listing-site-url","listing-language","listing-title","listing-author","listing-publication","listing-categories","listing-url_source","listing-journ","listing-issue","listing-page","listing-year","listing-pub_number","listing-path","listing-outputHref","listing-description","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+      searchColumns: ["listing-project","listing-website","listing-format","listing-site-url","listing-language","listing-title","listing-author","listing-categories","listing-url_source","listing-journ","listing-issue","listing-page","listing-year","listing-pub_number","listing-abstract","listing-bibtex","listing-path","listing-outputHref","listing-description","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -265,6 +265,56 @@ document.addEventListener('DOMContentLoaded', () => {
   removeEmptyListItems();
   removeEmptyEmail(); // New function call for email
 });
+
+function copyBibtex(pubNumber) {
+  const textarea = document.getElementById('bibtex-' + pubNumber);
+  if (!textarea) return;
+  
+  // Create a temporary textarea to copy from
+  const tempTextarea = document.createElement('textarea');
+  tempTextarea.value = textarea.value;
+  tempTextarea.style.position = 'fixed';
+  tempTextarea.style.left = '-9999px';
+  document.body.appendChild(tempTextarea);
+  
+  // Select and copy
+  tempTextarea.select();
+  tempTextarea.setSelectionRange(0, 99999);
+  
+  try {
+    document.execCommand('copy');
+    showCopyToast();
+  } catch (err) {
+    // Fallback for modern browsers
+    navigator.clipboard.writeText(textarea.value).then(() => {
+      showCopyToast();
+    }).catch(err => {
+      console.error('Failed to copy:', err);
+    });
+  }
+  
+  // Remove temporary textarea
+  document.body.removeChild(tempTextarea);
+}
+
+function showCopyToast() {
+  // Remove existing toast if any
+  const existingToast = document.querySelector('.copy-toast');
+  if (existingToast) {
+    existingToast.remove();
+  }
+  
+  // Create and show new toast
+  const toast = document.createElement('div');
+  toast.className = 'copy-toast';
+  toast.textContent = 'BibTeX citation copied to clipboard!';
+  document.body.appendChild(toast);
+  
+  // Remove after animation completes
+  setTimeout(() => {
+    toast.remove();
+  }, 3000);
+}
 </script>
 <p>For More Details <a href="http://mlg.eng.cam.ac.uk/hong/">click here</a></p>
 <section id="hongs-publications" class="level2">
@@ -279,69 +329,164 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="list quarto-listing-default">
     
     
-    <div class="quarto-post image-right" data-index="0" data-categories="cHJvYmFiaWxpc3RpY19wcm9ncmFtbWluZyUyQ2JheWVzaWFuX2luZmVyZW5jZSUyQ21hY2hpbmVfbGVhcm5pbmc=" data-listing-file-modified-sort="1760130425207" data-listing-reading-time-sort="3" data-listing-word-count-sort="559">
+    <div class="quarto-post image-right" data-index="0" data-categories="cHJvYmFiaWxpc3RpY19wcm9ncmFtbWluZyUyQ2JheWVzaWFuX2luZmVyZW5jZSUyQ21hY2hpbmVfbGVhcm5pbmc=" data-listing-file-modified-sort="1760216917131" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
         <div class="thumbnail">
             
         </div>
         <div class="body">
-            <a href="../../publications/2025_002_turing_general_purpose/index.html">
-                <div class="no-anchor listing-pub-title listing-title">Turing.jl: a general-purpose probabilistic programming language</div>
-            </a>
+            <div class="no-anchor listing-pub-title listing-title">Turing.jl: a general-purpose probabilistic programming language</div>
                 
             <div class="listing-pub-author listing-author">
-                Tor Erlend Fjelde, Kai Xu, David Widmann, Mohamed Tarek, Cameron Pfiffer, Martin Trapp, Seth D. Axen, Xianda Sun, Markus Hauru, Penelope Yong, Will Tebbutt, Zoubin Ghahramani, Hong Ge<br> 
+                Tor Erlend Fjelde, Kai Xu, David Widmann, Mohamed Tarek, Cameron Pfiffer, Martin Trapp, Seth D. Axen, Xianda Sun, Markus Hauru, Penelope Yong, Will Tebbutt, Zoubin Ghahramani, Hong Ge
             </div>
-                
-            <div class="metadata-value listing-pub-journal listing-publication">
-                
-                <i>ACM Transactions on Probabilistic Machine Learning</i>, <b>Just Accepted</b> (2025)<br>
-                
+            
+            
+            <div class="pub-abstract-wrapper" data-pub-id="2">
+                <div class="pub-abstract-preview" data-preview-id="2">
+                    Probabilistic programming languages (PPLs) are becoming increasingly important in many scientific disciplines, such as economics, epidemiology, and biology, to extract meaning from sources of data while accounting for one's uncertainty. The key idea of probabilistic programming is to decouple inference and model specification, thus allowing the practitioner to approach their task at hand using Bayesian inference, without requiring extensive knowledge in programming or computational statistics. At the same time, the complexity of problem settings in which PPLs are employed is steadily increasing, both in terms of project size and model complexity, calling for more flexible and efficient systems. In this work, we describe Turing.jl, a general-purpose PPL, which is designed to be flexible, efficient, and easy to use. Turing.jl is built on top of the Julia programming language, which is known for its high performance and ease-of-use. We describe the design of Turing.jl, contextualizing it within different types of users and use cases, its key features, and how it can be used to solve a wide range of problems. We also provide a brief overview of the ecosystem around Turing.jl, including the different libraries and tools that can be used in conjunction with it. Finally, we provide a few examples of how Turing.jl can be used in practice.
+
+                </div>
+                <details class="pub-details" data-details-id="2">
+                    <summary class="pub-summary">show more</summary>
+                    <div class="pub-abstract-full">
+                        Probabilistic programming languages (PPLs) are becoming increasingly important in many scientific disciplines, such as economics, epidemiology, and biology, to extract meaning from sources of data while accounting for one's uncertainty. The key idea of probabilistic programming is to decouple inference and model specification, thus allowing the practitioner to approach their task at hand using Bayesian inference, without requiring extensive knowledge in programming or computational statistics. At the same time, the complexity of problem settings in which PPLs are employed is steadily increasing, both in terms of project size and model complexity, calling for more flexible and efficient systems. In this work, we describe Turing.jl, a general-purpose PPL, which is designed to be flexible, efficient, and easy to use. Turing.jl is built on top of the Julia programming language, which is known for its high performance and ease-of-use. We describe the design of Turing.jl, contextualizing it within different types of users and use cases, its key features, and how it can be used to solve a wide range of problems. We also provide a brief overview of the ecosystem around Turing.jl, including the different libraries and tools that can be used in conjunction with it. Finally, we provide a few examples of how Turing.jl can be used in practice.
+
+                        <div class="pub-show-less" onclick="this.closest('.pub-details').removeAttribute('open')">show less</div>
+                    </div>
+                </details>
             </div>
+            
+            
+            
+            <textarea id="bibtex-2" class="pub-bibtex-hidden">@article{10.1145/3711897,
+  author = {Fjelde, Tor Erlend and Xu, Kai and Widmann, David and Tarek, Mohamed and Pfiffer, Cameron and Trapp, Martin and Axen, Seth D. and Sun, Xianda and Hauru, Markus and Yong, Penelope and Tebbutt, Will and Ghahramani, Zoubin and Ge, Hong},
+  title = {Turing.jl: a general-purpose probabilistic programming language},
+  year = {2025},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3711897},
+  doi = {10.1145/3711897},
+  abstract = {Probabilistic programming languages (PPLs) are becoming increasingly important in many scientific disciplines, such as economics, epidemiology, and biology, to extract meaning from sources of data while accounting for one's uncertainty. The key idea of probabilistic programming is to decouple inference and model specification, thus allowing the practitioner to approach their task at hand using Bayesian inference, without requiring extensive knowledge in programming or computational statistics. At the same time, the complexity of problem settings in which PPLs are employed is steadily increasing, both in terms of project size and model complexity, calling for more flexible and efficient systems. In this work, we describe Turing.jl, a general-purpose PPL, which is designed to be flexible, efficient, and easy to use. Turing.jl is built on top of the Julia programming language, which is known for its high performance and ease-of-use. We describe the design of Turing.jl, contextualizing it within different types of users and use cases, its key features, and how it can be used to solve a wide range of problems. We also provide a brief overview of the ecosystem around Turing.jl, including the different libraries and tools that can be used in conjunction with it. Finally, we provide a few examples of how Turing.jl can be used in practice.},
+  note = {Just Accepted},
+  journal = {ACM Trans. Probab. Mach. Learn.},
+  month = feb,
+  keywords = {Probabilistic Programming, Probabilistic Programming Languages, Probabilistic Inference, Bayesian Inference, Markov Chain Monte Carlo, Variational Inference, Sequential Monte Carlo, Uncertainty Quantification, Modeling Methodologies, Latent Variable Models, Maximum a Posteriori Modeling, Software Libraries and Repositories, Bayesian Computation, Variational Methods, Sequential Monte Carlo Methods}
+}
+</textarea>
+            
         </div>
         <div class="metadata">
-            
-            <div class="listing-pub-url">
-                <a href="https://doi.org/10.1145/3711897">
-                    <p style="color:#8250E6;">journal URL <i class="bi bi-box-arrow-up-right"></i></p>
-                </a>
+            <div class="pub-date-venue">
+                <div class="pub-date-venue-group">
+                    
+                    <span class="pub-date">2025-2-2</span> —
+                    
+                    
+                    <span class="pub-venue-badge">
+                        
+                        ACM Trans. Probab. Mach. Learn. Just Accepted
+                        
+                    </span>
+                    
+                    
+                    <button onclick="copyBibtex('2')" class="pub-bibtex-button-inline" title="Copy BibTeX citation">
+                        <i class="bi bi-quote"></i>
+                    </button>
+                    
+                </div>
             </div>
             
-  
-            
+            <div class="pub-links">
+                
+                <a href="https://doi.org/10.1145/3711897" target="_blank" rel="noopener" class="pub-link-button">
+                    ACM Trans. Probab. Mach. Learn. <i class="bi bi-box-arrow-up-right"></i>
+                </a>
+                
+
+                
+            </div>
         </div>
     </div>
     
     
     
-    <div class="quarto-post image-right" data-index="1" data-categories="cHJvYmFiaWxpc3RpY19wcm9ncmFtbWluZyUyQ2JheWVzaWFuX2luZmVyZW5jZSUyQ21vbnRlX2Nhcmxv" data-listing-file-modified-sort="1760130425207" data-listing-reading-time-sort="3" data-listing-word-count-sort="578">
+    <div class="quarto-post image-right" data-index="1" data-categories="cHJvYmFiaWxpc3RpY19wcm9ncmFtbWluZyUyQ2JheWVzaWFuX2luZmVyZW5jZSUyQ21vbnRlX2Nhcmxv" data-listing-file-modified-sort="1760216917131" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
         <div class="thumbnail">
             
         </div>
         <div class="body">
-            <a href="../../publications/2018_001_turing_flexible_inference/index.html">
-                <div class="no-anchor listing-pub-title listing-title">Turing: A Language for Flexible Probabilistic Inference</div>
-            </a>
+            <div class="no-anchor listing-pub-title listing-title">Turing: A Language for Flexible Probabilistic Inference</div>
                 
             <div class="listing-pub-author listing-author">
-                Hong Ge, Kai Xu, Zoubin Ghahramani<br> 
+                Hong Ge, Kai Xu, Zoubin Ghahramani
             </div>
-                
-            <div class="metadata-value listing-pub-journal listing-publication">
-                
-                <i>Proceedings of Machine Learning Research</i>, <b>84</b>, 1682-1690 (2018)<br>
-                
+            
+            
+            <div class="pub-abstract-wrapper" data-pub-id="1">
+                <div class="pub-abstract-preview" data-preview-id="1">
+                    Probabilistic programming promises to simplify and democratize probabilistic machine learning, but successful probabilistic programming systems require flexible, generic and efficient inference engines. In this work, we present a system called Turing for building MCMC algorithms for probabilistic programming inference. Turing has a very simple syntax and makes full use of the numerical capabilities in the Julia programming language, including all implemented probability distributions, and automatic differentiation. Turing supports a wide range of popular Monte Carlo algorithms, including Hamiltonian Monte Carlo (HMC), HMC with No-U-Turns (NUTS), Gibbs sampling, sequential Monte Carlo (SMC), and several particle MCMC (PMCMC) samplers. Most importantly, Turing inference is composable: it combines MCMC operations on subsets of variables, for example using a combination of an HMC engine and a particle Gibbs (PG) engine. We explore several combinations of inference methods with the aim of finding approaches that are both efficient and universal, i.e. applicable to arbitrary probabilistic models. NUTS—a popular variant of HMC that adapts Hamiltonian simulation path length automatically, although quite powerful for exploring differentiable target distributions, is however not universal. We identify some failure modes for the NUTS engine, and demonstrate that composition of PG (for discrete variables) and NUTS (for continuous variables) can be useful when the NUTS engine is either not applicable, or simply does not work well. Our aim is to present Turing and its composable inference engines to the world and encourage other researchers to build on this system to help advance the field of probabilistic machine learning.
+
+                </div>
+                <details class="pub-details" data-details-id="1">
+                    <summary class="pub-summary">show more</summary>
+                    <div class="pub-abstract-full">
+                        Probabilistic programming promises to simplify and democratize probabilistic machine learning, but successful probabilistic programming systems require flexible, generic and efficient inference engines. In this work, we present a system called Turing for building MCMC algorithms for probabilistic programming inference. Turing has a very simple syntax and makes full use of the numerical capabilities in the Julia programming language, including all implemented probability distributions, and automatic differentiation. Turing supports a wide range of popular Monte Carlo algorithms, including Hamiltonian Monte Carlo (HMC), HMC with No-U-Turns (NUTS), Gibbs sampling, sequential Monte Carlo (SMC), and several particle MCMC (PMCMC) samplers. Most importantly, Turing inference is composable: it combines MCMC operations on subsets of variables, for example using a combination of an HMC engine and a particle Gibbs (PG) engine. We explore several combinations of inference methods with the aim of finding approaches that are both efficient and universal, i.e. applicable to arbitrary probabilistic models. NUTS—a popular variant of HMC that adapts Hamiltonian simulation path length automatically, although quite powerful for exploring differentiable target distributions, is however not universal. We identify some failure modes for the NUTS engine, and demonstrate that composition of PG (for discrete variables) and NUTS (for continuous variables) can be useful when the NUTS engine is either not applicable, or simply does not work well. Our aim is to present Turing and its composable inference engines to the world and encourage other researchers to build on this system to help advance the field of probabilistic machine learning.
+
+                        <div class="pub-show-less" onclick="this.closest('.pub-details').removeAttribute('open')">show less</div>
+                    </div>
+                </details>
             </div>
+            
+            
+            
+            <textarea id="bibtex-1" class="pub-bibtex-hidden">@InProceedings{pmlr-v84-ge18b,
+  title = {Turing: A Language for Flexible Probabilistic Inference},
+  author = {Ge, Hong and Xu, Kai and Ghahramani, Zoubin},
+  booktitle = {Proceedings of the Twenty-First International Conference on Artificial Intelligence and Statistics},
+  pages = {1682--1690},
+  year = {2018},
+  editor = {Storkey, Amos and Perez-Cruz, Fernando},
+  volume = {84},
+  series = {Proceedings of Machine Learning Research},
+  month = {09--11 Apr},
+  publisher = {PMLR},
+  pdf = {http://proceedings.mlr.press/v84/ge18b/ge18b.pdf},
+  url = {https://proceedings.mlr.press/v84/ge18b.html},
+  abstract = {Probabilistic programming promises to simplify and democratize probabilistic machine learning, but successful probabilistic programming systems require flexible, generic and efficient inference engines. In this work, we present a system called Turing for building MCMC algorithms for probabilistic programming inference. Turing has a very simple syntax and makes full use of the numerical capabilities in the Julia programming language, including all implemented probability distributions, and automatic differentiation. Turing supports a wide range of popular Monte Carlo algorithms, including Hamiltonian Monte Carlo (HMC), HMC with No-U-Turns (NUTS), Gibbs sampling, sequential Monte Carlo (SMC), and several particle MCMC (PMCCC) samplers. Most importantly, Turing inference is composable: it combines MCMC operations on subsets of variables, for example using a combination of an HMC engine and a particle Gibbs (PG) engine. We explore several combinations of inference methods with the aim of finding approaches that are both efficient and universal, i.e. applicable to arbitrary probabilistic models. NUTS—a popular variant of HMC that adapts Hamiltonian simulation path length automatically, although quite powerful for exploring differentiable target distributions, is however not universal. We identify some failure modes for the NUTS engine, and demonstrate that composition of PG (for discrete variables) and NUTS (for continuous variables) can be useful when the NUTS engine is either not applicable, or simply does not work well. Our aim is to present Turing and its composable inference engines to the world and encourage other researchers to build on this system to help advance the field of probabilistic machine learning.}
+}
+</textarea>
+            
         </div>
         <div class="metadata">
-            
-            <div class="listing-pub-url">
-                <a href="https://proceedings.mlr.press/v84/ge18b.html">
-                    <p style="color:#8250E6;">journal URL <i class="bi bi-box-arrow-up-right"></i></p>
-                </a>
+            <div class="pub-date-venue">
+                <div class="pub-date-venue-group">
+                    
+                    <span class="pub-date">2018-1-1</span> —
+                    
+                    
+                    <span class="pub-venue-badge">
+                        
+                        PMLR 84
+                        
+                    </span>
+                    
+                    
+                    <button onclick="copyBibtex('1')" class="pub-bibtex-button-inline" title="Copy BibTeX citation">
+                        <i class="bi bi-quote"></i>
+                    </button>
+                    
+                </div>
             </div>
             
-  
-            
+            <div class="pub-links">
+                
+                <a href="https://proceedings.mlr.press/v84/ge18b.html" target="_blank" rel="noopener" class="pub-link-button">
+                    PMLR <i class="bi bi-box-arrow-up-right"></i>
+                </a>
+                
+
+                
+            </div>
         </div>
     </div>
     

@@ -192,3 +192,23 @@ code {
 .author-links li:last-child {
     margin-right: 0;
 }
+
+
+.thumbnail {
+    max-width: 0;
+    display: none;
+}
+
+.metadata {
+    max-width: 90px;
+    padding-bottom: 0 !important;
+}
+
+div.quarto-post {
+    display: block !important;
+}
+
+.quarto-post {
+    max-height: fit-content;
+    border-bottom: none !important;
+}

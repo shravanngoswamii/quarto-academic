@@ -80,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-publication','listing-title','listing-categories','listing-image','listing-date','listing-author',{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-publication','listing-title','listing-categories','listing-image','listing-date','listing-author','listing-url_source','listing-url_preprint','listing-journ','listing-issue','listing-page','listing-year','listing-abstract','listing-bibtex',{ data: ['index'] },{ data: ['categories'] }],
       
       searchColumns: [],
     };
@@ -265,6 +265,56 @@ document.addEventListener('DOMContentLoaded', () => {
   removeEmptyListItems();
   removeEmptyEmail(); // New function call for email
 });
+
+function copyBibtex(pubNumber) {
+  const textarea = document.getElementById('bibtex-' + pubNumber);
+  if (!textarea) return;
+  
+  // Create a temporary textarea to copy from
+  const tempTextarea = document.createElement('textarea');
+  tempTextarea.value = textarea.value;
+  tempTextarea.style.position = 'fixed';
+  tempTextarea.style.left = '-9999px';
+  document.body.appendChild(tempTextarea);
+  
+  // Select and copy
+  tempTextarea.select();
+  tempTextarea.setSelectionRange(0, 99999);
+  
+  try {
+    document.execCommand('copy');
+    showCopyToast();
+  } catch (err) {
+    // Fallback for modern browsers
+    navigator.clipboard.writeText(textarea.value).then(() => {
+      showCopyToast();
+    }).catch(err => {
+      console.error('Failed to copy:', err);
+    });
+  }
+  
+  // Remove temporary textarea
+  document.body.removeChild(tempTextarea);
+}
+
+function showCopyToast() {
+  // Remove existing toast if any
+  const existingToast = document.querySelector('.copy-toast');
+  if (existingToast) {
+    existingToast.remove();
+  }
+  
+  // Create and show new toast
+  const toast = document.createElement('div');
+  toast.className = 'copy-toast';
+  toast.textContent = 'BibTeX citation copied to clipboard!';
+  document.body.appendChild(toast);
+  
+  // Remove after animation completes
+  setTimeout(() => {
+    toast.remove();
+  }, 3000);
+}
 </script>
 <p>For More Details <a href="https://shravangoswami.com">click here</a></p>
 
