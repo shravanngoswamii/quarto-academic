@@ -1,1 +1,1 @@
-Sitemap: https://shravanngoswamii.github.io/academic-website-template/sitemap.xml
+Sitemap: https://shravanngoswamii.github.io/quarto-academic/sitemap.xml
