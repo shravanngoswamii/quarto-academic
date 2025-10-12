@@ -1,4 +1,4 @@
-# Academic Website Template
+# Quarto Academic Template
 
 A Quarto-based academic website template with publication management and people pages. Inspired by the [Cambridge Machine Learning Group website](https://mlg.eng.cam.ac.uk/).
 
@@ -18,7 +18,7 @@ This template provides a simple system for managing academic group websites with
 
 2. Preview the website:
    ```bash
-   cd academic-website-template
+   cd quarto-academic
    quarto preview
    ```
    Opens at [http://localhost:4200](http://localhost:4200)

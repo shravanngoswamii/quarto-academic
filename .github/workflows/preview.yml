@@ -47,7 +47,7 @@ jobs:
         with:
           message: |
             <!-- preview-url-comment -->
-            Preview the changes: https://shravangoswami.com/academic-website-template/pr-previews/${{ github.event.pull_request.number }}
+            Preview the changes: https://shravangoswami.com/quarto-academic/pr-previews/${{ github.event.pull_request.number }}
           comment_tag: preview-url-comment
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -7,8 +7,8 @@ project:
 
 # These cannot be used as variables. They are reserved for the project configuration.
 website:
-  title: "Academic Website Template"
-  site-url: https://shravanngoswamii.github.io/academic-website-template/
+  title: "Quarto Academic Template"
+  site-url: https://shravanngoswamii.github.io/quarto-academic/
   site-path: "/"
   favicon: "assets/logo/favicon.png"
   search: 
@@ -17,7 +17,7 @@ website:
   navbar:
     title: "<span class='title-hide-mobile'>Very Large Title For Your Site</span><span class='title-hide-desktop'>Short Title</span>"
     logo: "assets/logo/logo.png"
-    # logo-href: https://shravanngoswamii.github.io/academic-website-template/
+    # logo-href: https://shravanngoswamii.github.io/quarto-academic/
     background: "#c6dbef"
     right:
       - text: About Us
@@ -66,4 +66,4 @@ format:
           <p>Powered by <a href="https://quarto.org/">Quarto</a>. &copy; <a href="#">Your Academic Site</a>.</p>
         </footer>
 
-site-url: https://shravanngoswamii.github.io/academic-website-template/
+site-url: https://shravanngoswamii.github.io/quarto-academic/
