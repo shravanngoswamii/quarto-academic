@@ -1,5 +1,5 @@
 ---
-pagetitle: Academic Group Site Template
+pagetitle: Quarto Academic Template
 listing:
   id: news-listing
   contents: news/*/index.qmd
