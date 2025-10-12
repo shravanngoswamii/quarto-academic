@@ -1,0 +1,59 @@
+---
+# Define name once and reuse it everywhere
+name: &NAME Alan Turing
+
+pagetitle: *NAME
+image: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Alan_Turing_Aged_16.jpg/250px-Alan_Turing_Aged_16.jpg
+tagline: Visiting Scholar
+group: Visitors
+email: turing@example.edu
+year_arrived: 1936
+year_left:
+still_around: true
+slug: alan-turing
+links:
+  website: https://en.wikipedia.org/wiki/Alan_Turing
+  github:
+  twitter:
+  linkedin:
+  mastodon:
+  scholar:
+  youtube:
+  medium:
+  resume:
+
+listing:
+  id: pubs
+  template: ../../_ejs/publications-people.ejs
+  contents:
+    - "../../publications/**/*.qmd"
+    - "!../../publications/_template/"
+  sort: "pub_number desc"
+  filter-ui: true
+  include:
+    author: *NAME
+  fields: [publication, title, categories, image, date, author, url_source, url_preprint, journ, issue, page, year, abstract, bibtex]
+---
+
+{{< include ../_people.qmd >}}
+
+## About
+
+Alan Turing was a British mathematician, computer scientist, logician, and cryptanalyst. He is widely considered to be the father of theoretical computer science and artificial intelligence. During World War II, he worked for the Government Code and Cypher School at Bletchley Park, where he played a crucial role in breaking German ciphers. His concept of the Turing machine laid the foundation for the modern theory of computation.
+
+## Education
+
+- Ph.D. in Mathematics | Princeton University, 1938
+- B.A. in Mathematics | King's College, Cambridge, 1934
+
+## Research Interests
+
+- Computation Theory
+- Artificial Intelligence
+- Mathematical Biology
+- Cryptography
+
+## Alan Turing's Publications
+
+:::{#pubs}
+:::

@@ -1,0 +1,28 @@
+---
+title: "Black hole explosions?"
+author: ["Stephen Hawking"]
+categories: 
+  - "black_holes"
+  - "quantum_mechanics"
+  - "cosmology"
+url_source: "https://www.nature.com/articles/248030a0"
+journ: "Nature"
+issue: "248"
+page: "30-31"
+year: 1974
+pub_number: 5
+abstract: |
+  This revolutionary paper introduced the concept of Hawking radiation, demonstrating that black holes are not completely black but emit radiation due to quantum effects near the event horizon. This discovery bridged quantum mechanics and general relativity, showing that black holes have a temperature and can eventually evaporate. Hawking radiation has profound implications for our understanding of black holes, thermodynamics, and the ultimate fate of the universe.
+bibtex: |
+  @article{hawking1974black,
+    title = {Black hole explosions?},
+    author = {Hawking, S. W.},
+    journal = {Nature},
+    volume = {248},
+    number = {5443},
+    pages = {30--31},
+    year = {1974},
+    publisher = {Nature Publishing Group},
+    doi = {10.1038/248030a0}
+  }
+---

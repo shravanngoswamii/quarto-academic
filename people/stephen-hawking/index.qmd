@@ -1,0 +1,59 @@
+---
+# Define name once and reuse it everywhere
+name: &NAME Stephen Hawking
+
+pagetitle: *NAME
+image: https://ntvb.tmsimg.com/assets/assets/315047_v9_ba.jpg
+tagline: Professor of Cosmology
+group: Senior Researchers
+email: hawking@example.edu
+year_arrived: 1974
+year_left:
+still_around: true
+slug: stephen-hawking
+links:
+  website: https://en.wikipedia.org/wiki/Stephen_Hawking
+  github:
+  twitter:
+  linkedin:
+  mastodon:
+  scholar:
+  youtube:
+  medium:
+  resume:
+
+listing:
+  id: pubs
+  template: ../../_ejs/publications-people.ejs
+  contents:
+    - "../../publications/**/*.qmd"
+    - "!../../publications/_template/"
+  sort: "pub_number desc"
+  filter-ui: true
+  include:
+    author: *NAME
+  fields: [publication, title, categories, image, date, author, url_source, url_preprint, journ, issue, page, year, abstract, bibtex]
+---
+
+{{< include ../_people.qmd >}}
+
+## About
+
+Stephen Hawking was an English theoretical physicist, cosmologist, and author who made groundbreaking contributions to our understanding of black holes and the nature of the universe. Despite being diagnosed with motor neurone disease at age 21, he continued his research and became one of the most celebrated scientists of the 20th and 21st centuries. His work on black hole radiation (now known as Hawking radiation) bridged quantum mechanics and general relativity.
+
+## Education
+
+- Ph.D. in Cosmology | University of Cambridge, 1966
+- B.A. in Physics | University of Oxford, 1962
+
+## Research Interests
+
+- Black Holes
+- Cosmology
+- Quantum Gravity
+- Theoretical Physics
+
+## Stephen Hawking's Publications
+
+:::{#pubs}
+:::

@@ -1,0 +1,59 @@
+---
+# Define name once and reuse it everywhere
+name: &NAME Albert Einstein
+
+pagetitle: *NAME
+image: https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Albert_Einstein_1947.jpg/982px-Albert_Einstein_1947.jpg
+tagline: Professor of Physics
+group: Faculty
+email: einstein@example.edu
+year_arrived: 1905
+year_left:
+still_around: true
+slug: albert-einstein
+links:
+  website: https://en.wikipedia.org/wiki/Albert_Einstein
+  github:
+  twitter:
+  linkedin:
+  mastodon:
+  scholar:
+  youtube:
+  medium:
+  resume:
+
+listing:
+  id: pubs
+  template: ../../_ejs/publications-people.ejs
+  contents:
+    - "../../publications/**/*.qmd"
+    - "!../../publications/_template/"
+  sort: "pub_number desc"
+  filter-ui: true
+  include:
+    author: *NAME
+  fields: [publication, title, categories, image, date, author, url_source, url_preprint, journ, issue, page, year, abstract, bibtex]
+---
+
+{{< include ../_people.qmd >}}
+
+## About
+
+Albert Einstein was a theoretical physicist who developed the theory of relativity, one of the two pillars of modern physics. His work is also known for its influence on the philosophy of science. He is best known to the general public for his mass–energy equivalence formula E = mc², which has been dubbed "the world's most famous equation". He received the 1921 Nobel Prize in Physics for his services to theoretical physics, and especially for his discovery of the law of the photoelectric effect.
+
+## Education
+
+- Ph.D. in Physics | University of Zurich, 1905
+- Diploma in Mathematics and Physics | ETH Zurich, 1900
+
+## Research Interests
+
+- Theory of Relativity
+- Quantum Mechanics
+- Statistical Mechanics
+- Unified Field Theory
+
+## Albert Einstein's Publications
+
+:::{#pubs}
+:::

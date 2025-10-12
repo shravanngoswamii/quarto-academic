@@ -1,0 +1,20 @@
+---
+title: "Investigations on the Theory of the Brownian Movement"
+author: ["Albert Einstein"]
+categories: 
+  - "statistical_mechanics"
+  - "physics"
+url_source: "https://books.google.com/books?id=fBNRAQAAIAAJ"
+journ: "Courier Corporation"
+year: 1956
+pub_number: 3
+abstract: |
+  This collection of Einstein's papers on Brownian motion provided experimental proof of the existence of atoms and molecules. Einstein's theoretical framework explained the random motion of particles suspended in a fluid as resulting from collisions with fast-moving atoms or molecules in the gas or liquid. His mathematical treatment allowed Jean Perrin to confirm these predictions experimentally, providing strong evidence for the atomic theory of matter and earning Perrin the Nobel Prize in 1926.
+bibtex: |
+  @book{einstein1956investigations,
+    title = {Investigations on the Theory of the Brownian Movement},
+    author = {Einstein, Albert},
+    year = {1956},
+    publisher = {Courier Corporation}
+  }
+---

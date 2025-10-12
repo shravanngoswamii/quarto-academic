@@ -1,0 +1,59 @@
+---
+# Define name once and reuse it everywhere
+name: &NAME Richard Feynman
+
+pagetitle: *NAME
+image: https://cdn.britannica.com/83/21083-050-C53FAB08/Richard-Feynman.jpg
+tagline: PhD Student
+group: Graduate Students
+email: feynman@example.edu
+year_arrived: 1939
+year_left:
+still_around: true
+slug: richard-feynman
+links:
+  website: https://en.wikipedia.org/wiki/Richard_Feynman
+  github:
+  twitter:
+  linkedin:
+  mastodon:
+  scholar:
+  youtube:
+  medium:
+  resume:
+
+listing:
+  id: pubs
+  template: ../../_ejs/publications-people.ejs
+  contents:
+    - "../../publications/**/*.qmd"
+    - "!../../publications/_template/"
+  sort: "pub_number desc"
+  filter-ui: true
+  include:
+    author: *NAME
+  fields: [publication, title, categories, image, date, author, url_source, url_preprint, journ, issue, page, year, abstract, bibtex]
+---
+
+{{< include ../_people.qmd >}}
+
+## About
+
+Richard Feynman was an American theoretical physicist known for his work in quantum mechanics, quantum electrodynamics, and particle physics. He received the Nobel Prize in Physics in 1965 for his contributions to the development of quantum electrodynamics. Feynman was also known for his clear and engaging teaching style, making complex physics concepts accessible through his famous Feynman diagrams and lectures.
+
+## Education
+
+- Ph.D. in Physics | Princeton University, 1942
+- B.S. in Physics | MIT, 1939
+
+## Research Interests
+
+- Quantum Electrodynamics
+- Quantum Computing
+- Particle Physics
+- Nanotechnology
+
+## Richard Feynman's Publications
+
+:::{#pubs}
+:::

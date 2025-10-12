@@ -5,7 +5,7 @@ name: &NAME Full Name
 pagetitle: *NAME
 image: avatar.jpg
 tagline: Position at Organization
-group: mentor  # or: phd, postdoc, alumni, etc.
+group: Faculty  # Options: Faculty, Senior Researchers, Post-Docs, Graduate Students, Visitors, Other
 email: email@example.com
 year_arrived: 2020
 year_left:

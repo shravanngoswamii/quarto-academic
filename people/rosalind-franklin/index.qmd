@@ -1,0 +1,59 @@
+---
+# Define name once and reuse it everywhere
+name: &NAME Rosalind Franklin
+
+pagetitle: *NAME
+image: https://cdn.britannica.com/30/99730-050-E68F62FF/Rosalind-Franklin.jpg
+tagline: Research Collaborator
+group: Other
+email: franklin@example.edu
+year_arrived: 1951
+year_left: 1958
+still_around: false
+slug: rosalind-franklin
+links:
+  website: https://en.wikipedia.org/wiki/Rosalind_Franklin
+  github:
+  twitter:
+  linkedin:
+  mastodon:
+  scholar:
+  youtube:
+  medium:
+  resume:
+
+listing:
+  id: pubs
+  template: ../../_ejs/publications-people.ejs
+  contents:
+    - "../../publications/**/*.qmd"
+    - "!../../publications/_template/"
+  sort: "pub_number desc"
+  filter-ui: true
+  include:
+    author: *NAME
+  fields: [publication, title, categories, image, date, author, url_source, url_preprint, journ, issue, page, year, abstract, bibtex]
+---
+
+{{< include ../_people.qmd >}}
+
+## About
+
+Rosalind Franklin was a British chemist and X-ray crystallographer whose work was central to the understanding of the molecular structures of DNA, RNA, viruses, coal, and graphite. Her X-ray diffraction images of DNA, particularly Photo 51, provided crucial evidence for the double helix structure. Franklin's contributions to science were groundbreaking, though her role was not fully recognized during her lifetime.
+
+## Education
+
+- Ph.D. in Physical Chemistry | University of Cambridge, 1945
+- B.A. in Natural Sciences | University of Cambridge, 1941
+
+## Research Interests
+
+- X-ray Crystallography
+- Molecular Biology
+- Structural Biology
+- Virology
+
+## Rosalind Franklin's Publications
+
+:::{#pubs}
+:::

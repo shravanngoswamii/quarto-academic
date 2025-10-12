@@ -6,7 +6,7 @@ if (!group || typeof group !== 'string') {
 const lowerGroup = group.toLowerCase();
 if (lowerGroup.includes('admin')) return 'Admin Support';
 if (lowerGroup.includes('faculty')) return 'Faculty';
-if (lowerGroup.includes('mentor')) return 'Mentor';
+if (lowerGroup.includes('senior')) return 'Senior Researchers';
 if (lowerGroup.includes('post-doc') || lowerGroup.includes('postdoc')) return 'Post-Docs';
 if (lowerGroup.includes('graduate')) return 'Graduate Students';
 if (lowerGroup.includes('student')) return 'Student';
@@ -25,13 +25,15 @@ if (!item.name || !item.group) continue;
 const slugValue = item.slug || '';
 const folderName = slugValue.includes('/') ? slugValue.split('/').pop() : slugValue;
 
-// Extract just the image filename from the full path
+// Extract just the image filename from the full path, or keep full URL if it's a remote image
 const imageValue = item.image || '';
-const imageFilename = imageValue.includes('/') ? imageValue.split('/').pop() : imageValue;
+const imageFilename = (imageValue.startsWith('http://') || imageValue.startsWith('https://')) 
+  ? imageValue 
+  : (imageValue.includes('/') ? imageValue.split('/').pop() : imageValue);
 
 const member = {
   name: item.name,
-  image: imageFilename, // Just "hong.png", "shravan-goswami.jpg", etc.
+  image: imageFilename, // Just "hong.png", "shravan-goswami.jpg", or full URL for remote images
   tagline: item.tagline,
   group: item.group,
   email: item.email,
@@ -73,7 +75,7 @@ return acc;
 ::: {.person}
 ```{=html}
 <a href="<%= member.slug %>/">
-<img src="<%= member.slug %>/<%= member.image %>" alt="<%= member.name %>" onerror="this.src='../assets/icons/person.webp';">
+<img src="<%= member.image.startsWith('http://') || member.image.startsWith('https://') ? member.image : member.slug + '/' + member.image %>" alt="<%= member.name %>" onerror="this.src='../assets/icons/person.webp';">
 <p><%= member.pagetitle %></p>
 </a>
 ```

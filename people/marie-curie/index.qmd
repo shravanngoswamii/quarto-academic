@@ -1,0 +1,59 @@
+---
+# Define name once and reuse it everywhere
+name: &NAME Marie Curie
+
+pagetitle: *NAME
+image: https://upload.wikimedia.org/wikipedia/commons/c/c8/Marie_Curie_c._1920s.jpg
+tagline: Postdoctoral Research Associate
+group: Post-Docs
+email: curie@example.edu
+year_arrived: 1895
+year_left:
+still_around: true
+slug: marie-curie
+links:
+  website: https://en.wikipedia.org/wiki/Marie_Curie
+  github:
+  twitter:
+  linkedin:
+  mastodon:
+  scholar:
+  youtube:
+  medium:
+  resume:
+
+listing:
+  id: pubs
+  template: ../../_ejs/publications-people.ejs
+  contents:
+    - "../../publications/**/*.qmd"
+    - "!../../publications/_template/"
+  sort: "pub_number desc"
+  filter-ui: true
+  include:
+    author: *NAME
+  fields: [publication, title, categories, image, date, author, url_source, url_preprint, journ, issue, page, year, abstract, bibtex]
+---
+
+{{< include ../_people.qmd >}}
+
+## About
+
+Marie Curie was a pioneering physicist and chemist who conducted groundbreaking research on radioactivity. She was the first woman to win a Nobel Prize, the first person to win the Nobel Prize twice, and the only person to win the Nobel Prize in two scientific fields (Physics in 1903 and Chemistry in 1911). Her work laid the foundation for understanding atomic structure and radioactive decay.
+
+## Education
+
+- Ph.D. in Physics | University of Paris, 1903
+- Master's degree in Physics and Mathematics | University of Paris, 1894
+
+## Research Interests
+
+- Radioactivity
+- Nuclear Physics
+- Chemistry
+- X-ray Technology
+
+## Marie Curie's Publications
+
+:::{#pubs}
+:::

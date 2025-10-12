@@ -1,0 +1,59 @@
+---
+# Define name once and reuse it everywhere
+name: &NAME Emmy Noether
+
+pagetitle: *NAME
+image: https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Emmy_Noether_%283x4_cropped%29.jpg/500px-Emmy_Noether_%283x4_cropped%29.jpg
+tagline: PhD Student
+group: Graduate Students
+email: noether@example.edu
+year_arrived: 1915
+year_left:
+still_around: true
+slug: emmy-noether
+links:
+  website: https://en.wikipedia.org/wiki/Emmy_Noether
+  github:
+  twitter:
+  linkedin:
+  mastodon:
+  scholar:
+  youtube:
+  medium:
+  resume:
+
+listing:
+  id: pubs
+  template: ../../_ejs/publications-people.ejs
+  contents:
+    - "../../publications/**/*.qmd"
+    - "!../../publications/_template/"
+  sort: "pub_number desc"
+  filter-ui: true
+  include:
+    author: *NAME
+  fields: [publication, title, categories, image, date, author, url_source, url_preprint, journ, issue, page, year, abstract, bibtex]
+---
+
+{{< include ../_people.qmd >}}
+
+## About
+
+Emmy Noether was a German mathematician who made groundbreaking contributions to abstract algebra and theoretical physics. Her theorem, now known as Noether's theorem, demonstrates the connection between symmetry and conservation laws, which is fundamental to modern physics. Albert Einstein described her as "the most significant creative mathematical genius thus far produced since the higher education of women began."
+
+## Education
+
+- Ph.D. in Mathematics | University of Erlangen, 1907
+- University studies | University of Erlangen and University of Göttingen
+
+## Research Interests
+
+- Abstract Algebra
+- Theoretical Physics
+- Ring Theory
+- Conservation Laws
+
+## Emmy Noether's Publications
+
+:::{#pubs}
+:::
