@@ -10,3 +10,4 @@ site_libs/
 __pycache__
 *.html
 *.json
+**/*.quarto_ipynb

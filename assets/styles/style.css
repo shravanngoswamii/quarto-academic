@@ -2,6 +2,32 @@
     overflow-wrap: break-word;
 }
 
+html {
+    overflow-y: auto;
+}
+
+html::-webkit-scrollbar {
+    width: 6px;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: rgba(93, 134, 171, 0.35);
+    border-radius: 999px;
+    border: 0;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background: rgba(79, 120, 157, 0.55);
+}
+
+html::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
 .navbar a:hover {
     text-decoration: none;
     color: #3660be !important;
@@ -80,7 +106,8 @@ a:hover {
 
 footer {
     position: absolute;
-    width: 100vw;
+    width: 100%;
+    box-sizing: border-box;
     background-color: #c6dbef;
     color: #3b4248;
     padding: 20px;
