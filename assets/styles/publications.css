@@ -147,6 +147,7 @@
   color: #2563eb;
   padding: 0;
   margin: 0;
+  -webkit-user-select: none;
   user-select: none;
   transition: color 0.2s ease;
   font-style: italic;
@@ -168,6 +169,7 @@
   color: #2563eb;
   margin-top: 0.5rem;
   display: inline-block;
+  -webkit-user-select: none;
   user-select: none;
   transition: color 0.2s ease;
   font-style: italic;
