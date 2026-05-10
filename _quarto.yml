@@ -8,7 +8,7 @@ project:
 # These cannot be used as variables. They are reserved for the project configuration.
 website:
   title: "Quarto Academic Template"
-  site-url: https://shravanngoswamii.github.io/quarto-academic/
+  site-url: https://shravangoswami.com/quarto-academic/
   site-path: "/"
   favicon: "assets/logo/favicon.png"
   search: 
